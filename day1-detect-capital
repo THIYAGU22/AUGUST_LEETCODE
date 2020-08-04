@@ -1,0 +1,26 @@
+class Solution {
+    public boolean detectCapitalUse(String word) {
+        int capital_letters = 0;
+        if(word.charAt(0)>='A' && word.charAt(0)<='Z')
+        {
+            for(int i = 0 ; i < word.length(); i++)
+            {
+             if(word.charAt(i)>='A' && word.charAt(i)<='Z')
+                 capital_letters++;
+            }
+            //System.out.println(capital_letters);
+            if(capital_letters == 1 || capital_letters == word.length())
+                return true;
+        }
+        else{
+            for(int i = 0 ; i < word.length(); i++)
+            {
+             if(word.charAt(i)>='A' && word.charAt(i)<='Z')
+                 capital_letters++;
+            }
+            if(capital_letters==0)
+                return true;
+        }
+        return false;
+    }
+}
