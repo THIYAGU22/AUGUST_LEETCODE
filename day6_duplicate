@@ -1,0 +1,19 @@
+class Solution {
+    public List<Integer> findDuplicates(int[] nums) {
+        ArrayList<Integer> al = new ArrayList<>();
+        for(int x : nums)
+        {
+            int idx = Math.abs(x)-1;
+            if(nums[idx]>0)
+            {
+                int val = -nums[idx];
+                nums[idx] = val;
+            }
+            else
+            {
+                al.add(Math.abs(x));
+            }
+        }
+        return al;
+    }
+}
