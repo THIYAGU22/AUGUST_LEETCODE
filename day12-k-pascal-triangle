@@ -1,0 +1,36 @@
+public List<Integer> getRow(int rowIndex) {
+        ArrayList<Integer> al = new ArrayList<>();
+        al.add(1);
+        if(rowIndex==0)
+            return al;
+        else
+            al.add(1);
+        if(rowIndex==1)
+            return al;
+        return pass_al(1,rowIndex,al);
+    }
+    public List<Integer> pass_al(int currIdx,int rowIdx,List<Integer> al)
+    {
+        if(currIdx==rowIdx)
+        {
+            //System.out.println(al);
+            return al;
+        }
+        int starter = 1;
+        int end = al.size();
+        
+        ArrayList<Integer> newly = new ArrayList<>();
+        newly.add(1);
+        while(starter<end)
+        {
+            int ele = al.get(starter) + al.get(starter-1);
+            newly.add(starter,ele);
+            starter++;
+        }
+        newly.add(1);
+        
+        //System.out.println(newly);
+        currIdx++;
+        
+        return pass_al(currIdx,rowIdx,newly);
+    }
